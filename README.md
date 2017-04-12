@@ -1,20 +1,20 @@
-php70u
-======
+php56
+=====
 
 An alternative installation of PHP for Amazon AMI.
 
 Samples
 -------
 ```
-include php70
+include php56
 ```
 ```
-php70::config {
+php56::config {
   'Date/date.timezone': value => 'America/New_York';
 }
 ```
 ```
-php70::modules { 'bcmath': ensure => 'latest', }
+php56::modules { 'bcmath': ensure => 'latest', }
 ```
 
 License
