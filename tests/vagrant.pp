@@ -1,5 +1,5 @@
 node default {
-  include ::php70
+  include ::php56
 
   Yumrepo <| |> -> Package <| provider != 'rpm' |>
 
@@ -21,10 +21,10 @@ node default {
 
   package { 'httpd24': ensure => present }
 
-  php70::config {
+  php56::config {
     'Date/date.timezone': value => 'America/New_York'
   }
 
-  php70::modules { 'xmlrpc': }
+  php56::modules { 'xmlrpc': }
 
 }

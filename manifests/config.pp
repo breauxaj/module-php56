@@ -1,7 +1,7 @@
-define php70::config (
+define php56::config (
   $value
 ) {
-  include ::php70
+  include ::php56
 
   $key = $title
 
@@ -11,7 +11,7 @@ define php70::config (
     context => $context,
     onlyif  => "get ${key} != '${value}'",
     changes => "set ${key} '${value}'",
-    require => Package[$::php70::params::php_packages],
+    require => Package[$::php56::params::php_packages],
   } ~> Exec['php-apachectl-restart']
 
 }

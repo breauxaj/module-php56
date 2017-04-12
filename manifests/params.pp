@@ -1,4 +1,4 @@
-# Class: php70::params
+# Class: php56::params
 #
 # This class set parameters used in this module
 #
@@ -6,28 +6,28 @@
 #   - Defines numerous parameters used by other classes
 #   - Does not support other operatingsysem patterns - amazon ami only
 #
-class php70::params {
+class php56::params {
   $php_package_ensure = 'latest'
 
   case $::operatingsystem {
     'Amazon': {
       $php_packages = [
-        'php70',
-        'php70-bcmath',
-        'php70-cli',
-        'php70-common',
-        'php70-dba',
-        'php70-devel',
-        'php70-gd',
-        'php70-intl',
-        'php70-json',
-        'php70-ldap',
-        'php70-mbstring',
-        'php70-mcrypt',
-        'php70-mysqlnd',
-        'php70-pdo',
-        'php70-process',
-        'php70-xml'
+        'php56',
+        'php56-bcmath',
+        'php56-cli',
+        'php56-common',
+        'php56-dba',
+        'php56-devel',
+        'php56-gd',
+        'php56-intl',
+        'php56-json',
+        'php56-ldap',
+        'php56-mbstring',
+        'php56-mcrypt',
+        'php56-mysqlnd',
+        'php56-pdo',
+        'php56-process',
+        'php56-xml'
       ]
     }
     default: {

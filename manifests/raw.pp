@@ -1,8 +1,8 @@
-define php70::raw (
+define php56::raw (
   $ensure = present,
   $content
 ) {
-  include ::php70
+  include ::php56
 
   file { "/etc/php.d/${name}.ini":
     ensure  => $ensure,
@@ -10,7 +10,7 @@ define php70::raw (
     group   => 'root',
     mode    => '0644',
     content => $content,
-    require => Package[$::php70::params::php_packages],
+    require => Package[$::php56::params::php_packages],
   } ~> Exec['php-apachectl-restart']
 
 }

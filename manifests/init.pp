@@ -1,6 +1,6 @@
-# Class: php70
+# Class: php56
 #
-# This class installs PHP 7.0 for Amazon AMI
+# This class installs PHP 5.6 for Amazon AMI
 #
 # Parameters:
 #
@@ -8,32 +8,32 @@
 #    Determine which version to install
 #
 # Actions:
-#   - Install PHP 7.0
+#   - Install PHP 5.6
 #
 # Sample Usage:
 #
 #  For a standard installation, use:
 #
-#    class { 'php70': }
+#    class { 'php56': }
 #
-class php70 (
-  $ensure = $::php70::params::php_package_ensure
-) inherits ::php70::params {
-  package { $::php70::params::php_packages:
+class php56 (
+  $ensure = $::php56::params::php_package_ensure
+) inherits ::php56::params {
+  package { $::php56::params::php_packages:
     ensure  => $ensure
   }
 
   $config = hiera_hash('php',{})
-  create_resources('php70::config',$config)
+  create_resources('php56::config',$config)
 
   $modules = hiera_hash('php::modules',{})
-  create_resources('php70::modules',$modules)
+  create_resources('php56::modules',$modules)
 
   $pecl = hiera_hash('php::pecl',{})
-  create_resources('php70::pecl',$pecl)
+  create_resources('php56::pecl',$pecl)
 
   $raw = hiera_hash('php::raw',{})
-  create_resources('php70::raw',$raw)
+  create_resources('php56::raw',$raw)
 
   exec { 'php-apachectl-restart':
     command     => '/usr/sbin/apachectl restart',
