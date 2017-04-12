@@ -20,7 +20,6 @@ class php56::params {
         'php56-devel',
         'php56-gd',
         'php56-intl',
-        'php56-json',
         'php56-ldap',
         'php56-mbstring',
         'php56-mcrypt',
