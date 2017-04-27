@@ -29,9 +29,6 @@ class php56 (
   $modules = hiera_hash('php::modules',{})
   create_resources('php56::modules',$modules)
 
-  $pecl = hiera_hash('php::pecl',{})
-  create_resources('php56::pecl',$pecl)
-
   $raw = hiera_hash('php::raw',{})
   create_resources('php56::raw',$raw)
 
